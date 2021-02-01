@@ -1,1 +1,28 @@
 <%= render 'list', photo: @photo %>
+
+<div>
+  <% @photos.each do |photos|%>
+  <table>
+    <thead>
+      <tr>
+        <th>画像</th>
+        <th>場所名</th>
+        <th>説明文</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= attachment_image_tag photos, :image, size:'50x50' %></td>
+        <td><%= photos.place_name%></td>
+        <td><%= photos.caption %></td>
+      </tr>
+    </tbody>
+  </table>
+  <% end %>
+</div>
+
+
+
+
+
+ 
