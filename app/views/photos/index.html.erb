@@ -1,25 +1,56 @@
-<%= render 'list', photo: @photo %>
-
-<div>
-  <% @photos.each do |photos|%>
-  <table>
-    <thead>
-      <tr>
-        <th>画像</th>
-        <th>場所名</th>
-        <th>説明文</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= attachment_image_tag photos, :image, size:'50x50' %></td>
-        <td><%= photos.place_name%></td>
-        <td><%= photos.caption %></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'list', photo: @photo %>
+    </div>
+      <div>
+        <% @photos.each do |photos|%>
+        <table>
+          <thead>
+            <tr>
+              <th>画像</th>
+              <th>場所名</th>
+              <th>説明文</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= attachment_image_tag photos, :image, size:'50x50' %></td>
+              <td><%= photos.place_name%></td>
+              <td><%= photos.caption %></td>
+            </tr>
+          </tbody>
+        </table>
+        <% end %>
+      </div>
+  </div>
+</div>
+<div id="photopost">
+    <h1>画像投稿フォーム</h1>
+  <%= form_with model: @photo, local:true do |f| %>
+    <h4>画像</h4>
+    <%= f.attachment_field :image %>
+    <h4>場所名</h4>
+    <%= f.text_field :place_name %>
+    <h4>説明</h4>
+    <%= f.text_area :caption %>
+    <%= f.submit '投稿' %>
   <% end %>
 </div>
+<div id="photopostbutton"><div>
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+<script src="test.js">
+  $(function(){
+  $('#photopostbutton').on('click', function(){
+    $('#photopost').toggle('slow');
+  });
+});
+
+</script>
 
 
 

@@ -1,23 +1,28 @@
-<%= render 'list', blog: @blog %>
-
-<div>
-  <% @blogs.each do |blogs|%>
-  <table>
-    <thead>
-      <tr>
-        <th>画像</th>
-        <th>場所名</th>
-        <th>説明文</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= attachment_image_tag blogs, :image, size:'50x50' %></td>
-        <td><%= blogs.title%></td>
-        <td><%= blogs.caption %></td>
-      </tr>
-    </tbody>
-  </table>
-  <% end %>
+<div class=container>
+  <div class="row"> 
+    <div class-"col-md-3">
+      <%= render 'list', blog: @blog %>
+    </div>
+    <div class="col-md-9">
+      <% @blogs.each do |blogs|%>
+      <table>
+        <thead>
+          <tr>
+            <th>画像</th>
+            <th>場所名</th>
+            <th>説明文</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= attachment_image_tag blogs, :image, size:'50x50' %></td>
+            <td><%= blogs.title%></td>
+            <td><%= blogs.caption %></td>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+  </div>
 </div>
 
