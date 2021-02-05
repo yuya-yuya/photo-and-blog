@@ -1,10 +1,10 @@
+
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <%= render 'list', photo: @photo %>
+      <div id="photopostbutton" class="btn btn-primary">投稿する</div>
     </div>
       <div>
-        <% @photos.each do |photos|%>
         <table>
           <thead>
             <tr>
@@ -13,6 +13,7 @@
               <th>説明文</th>
             </tr>
           </thead>
+          <% @photos.each do |photos|%>
           <tbody>
             <tr>
               <td><%= attachment_image_tag photos, :image, size:'50x50' %></td>
@@ -20,11 +21,11 @@
               <td><%= photos.caption %></td>
             </tr>
           </tbody>
+          <% end %>
         </table>
-        <% end %>
       </div>
   </div>
-</div>
+</div><br>
 <div id="photopost">
     <h1>画像投稿フォーム</h1>
   <%= form_with model: @photo, local:true do |f| %>
@@ -37,20 +38,15 @@
     <%= f.submit '投稿' %>
   <% end %>
 </div>
-<div id="photopostbutton"><div>
 
 <script
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
-<script src="test.js">
-  $(function(){
-  $('#photopostbutton').on('click', function(){
-    $('#photopost').toggle('slow');
-  });
-});
+<script src="photoindex.js"></script>
 
-</script>
+
+
 
 
 
