@@ -1,7 +1,12 @@
 <div id="top-photo">
-  <%= link_to "photo", photos_path %>
+  <%= link_to  photos_path do %>
+    <%= image_tag 'blog.jpg', id: 'topphoto'  %>
+  <% end %>
 </div>
 
 <div id="top-blog">
-  <%= link_to "blog", blogs_path %>
+  <%= link_to  blogs_path do %>
+    <% image_tag 'camera.jpg', id: 'topblog'%>
+  <% end %>
 </div>
+
