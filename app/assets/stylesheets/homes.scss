@@ -2,11 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// skipper開始
+#topskipper{
+  height: 750px;
+}
+
+.image1 {
+  background-image: url(test1.jpg);
+}
+
+.image2 {
+  background-image: url(test2.jpg);
+}
+
+.image3 {
+  background-image: url(test3.jpg);
+}
+
+.image4 {
+  background-image: url(test4.jpg);
+}
+
+.image5 {
+  background-image: url(test5.jpg);
+}
+// skipper終了
+
+// アイコン開始
 #topphoto{
   width: 200px;
   height: 200px;
   border: 3px solid black;
   border-radius: 50%;
+  position: absolute;
+  top: 300px;
+  left: 400px;
 }
 
 #topblog{
@@ -14,4 +44,8 @@
   height: 200px;
   border: 3px solid black;
   border-radius: 50%;
+  position: absolute;
+  top: 300px;
+  left: 800px;
 }
+// アイコン終了
